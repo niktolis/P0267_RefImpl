@@ -37,7 +37,7 @@ namespace std {
 				}
 #endif
 				template<class GraphicsSurfaces>
-				inline basic_image_surface<GraphicsSurfaces>::basic_image_surface(basic_image_surface&& val) noexcept 
+				inline basic_image_surface<GraphicsSurfaces>::basic_image_surface(basic_image_surface&& val) noexcept
             : _Data(std::move(GraphicsSurfaces::surfaces::move_image_surface(std::move(val._Data)))) {
 				}
 
@@ -163,7 +163,7 @@ namespace std {
 				inline basic_output_surface<GraphicsSurfaces>::basic_output_surface(int preferredWidth,
 					int preferredHeight, io2d::format preferredFormat, io2d::scaling scl,
 					io2d::refresh_style rr, float fps)
-					: _Data(move(GraphicsSurfaces::surfaces::create_output_surface(preferredWidth, preferredHeight, preferredFormat, scl, rr, fps))) {}
+					: _Data(std::move(GraphicsSurfaces::surfaces::create_output_surface(preferredWidth, preferredHeight, preferredFormat, scl, rr, fps))) {}
 				template <class GraphicsSurfaces>
 				inline basic_output_surface<GraphicsSurfaces>::basic_output_surface(int preferredWidth,
 					int preferredHeight, io2d::format preferredFormat, error_code& ec, io2d::scaling scl,

@@ -306,7 +306,7 @@ namespace std {
 
 				template<class GraphicsSurfaces>
 				inline basic_stroke_props<GraphicsSurfaces>::basic_stroke_props(basic_stroke_props&& other) noexcept
-					: _Data(GraphicsSurfaces::surface_state_props::move_stroke_props(move(other._Data))) {
+					: _Data(GraphicsSurfaces::surface_state_props::move_stroke_props(std::move(other._Data))) {
 				}
 
 				template<class GraphicsSurfaces>

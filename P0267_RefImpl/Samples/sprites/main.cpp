@@ -163,7 +163,7 @@ int main(int /*argc*/, char *argv[]) {
         }
     }();
     const auto image_size = image.dimensions();
-    const auto cat_brush = brush{move(image)};
+    const auto cat_brush = brush{std::move(image)};
     auto display = output_surface{500, 500, format::argb32, scaling::none};    
     
     vector<Cat> cats;

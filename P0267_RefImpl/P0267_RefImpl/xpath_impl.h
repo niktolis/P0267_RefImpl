@@ -46,7 +46,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::abs_new_figure& basic_figure_items<GraphicsSurfaces>::abs_new_figure::operator=(abs_new_figure&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_abs_new_figure(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_abs_new_figure(std::move(other._Data)));
 			}
             return *this;
 		}
@@ -75,7 +75,7 @@ namespace std::experimental::io2d {
         inline bool basic_figure_items<GraphicsSurfaces>::abs_new_figure::operator!=(const abs_new_figure& rhs) const noexcept {
             return !(*this == rhs);
         }
-                
+
 		template<class GraphicsSurfaces>
 		inline const typename basic_figure_items<GraphicsSurfaces>::rel_new_figure::data_type& basic_figure_items<GraphicsSurfaces>::rel_new_figure::data() const noexcept {
 			return _Data;
@@ -110,7 +110,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::rel_new_figure& basic_figure_items<GraphicsSurfaces>::rel_new_figure::operator=(rel_new_figure&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_rel_new_figure(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_rel_new_figure(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -126,17 +126,17 @@ namespace std::experimental::io2d {
 		inline basic_point_2d<typename GraphicsSurfaces::graphics_math_type> basic_figure_items<GraphicsSurfaces>::rel_new_figure::at() const noexcept {
 			return GraphicsSurfaces::paths::at(_Data);
 		}
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::rel_new_figure::operator==(const rel_new_figure& rhs) const noexcept {
             return at() == rhs.at();
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::rel_new_figure::operator!=(const rel_new_figure& rhs) const noexcept {
             return !(*this == rhs);
-        }        
-        
+        }
+
 		template<class GraphicsSurfaces>
 		inline const typename basic_figure_items<GraphicsSurfaces>::close_figure::data_type& basic_figure_items<GraphicsSurfaces>::close_figure::data() const noexcept {
 			return _Data;
@@ -173,7 +173,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::close_figure& basic_figure_items<GraphicsSurfaces>::close_figure::operator=(close_figure&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_close_figure(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_close_figure(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -182,17 +182,17 @@ namespace std::experimental::io2d {
 		inline basic_figure_items<GraphicsSurfaces>::close_figure::~close_figure() noexcept {
 			GraphicsSurfaces::paths::destroy(_Data);
 		}
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::close_figure::operator==(const close_figure& rhs) const noexcept {
             return true;
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::close_figure::operator!=(const close_figure& rhs) const noexcept {
             return !(*this == rhs);
-        }                
-                
+        }
+
 		template<class GraphicsSurfaces>
 		inline const typename basic_figure_items<GraphicsSurfaces>::abs_matrix::data_type& basic_figure_items<GraphicsSurfaces>::abs_matrix::data() const noexcept {
 			return _Data;
@@ -234,7 +234,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::abs_matrix& basic_figure_items<GraphicsSurfaces>::abs_matrix::operator=(abs_matrix&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_abs_matrix(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_abs_matrix(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -258,12 +258,12 @@ namespace std::experimental::io2d {
         inline bool basic_figure_items<GraphicsSurfaces>::abs_matrix::operator==(const abs_matrix& rhs) const noexcept {
             return matrix() == rhs.matrix();
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::abs_matrix::operator!=(const abs_matrix& rhs) const noexcept {
             return !(*this == rhs);
-        }             
-                
+        }
+
 		template<class GraphicsSurfaces>
 		inline const typename basic_figure_items<GraphicsSurfaces>::rel_matrix::data_type& basic_figure_items<GraphicsSurfaces>::rel_matrix::data() const noexcept {
 			return _Data;
@@ -305,7 +305,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::rel_matrix& basic_figure_items<GraphicsSurfaces>::rel_matrix::operator=(rel_matrix&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_rel_matrix(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_rel_matrix(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -329,11 +329,11 @@ namespace std::experimental::io2d {
         inline bool basic_figure_items<GraphicsSurfaces>::rel_matrix::operator==(const rel_matrix& rhs) const noexcept {
             return matrix() == rhs.matrix();
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::rel_matrix::operator!=(const rel_matrix& rhs) const noexcept {
             return !(*this == rhs);
-        }               
+        }
 
 		template<class GraphicsSurfaces>
 		inline const typename basic_figure_items<GraphicsSurfaces>::revert_matrix::data_type& basic_figure_items<GraphicsSurfaces>::revert_matrix::data() const noexcept {
@@ -365,7 +365,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::revert_matrix& basic_figure_items<GraphicsSurfaces>::revert_matrix::operator=(revert_matrix&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_revert_matrix(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_revert_matrix(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -373,12 +373,12 @@ namespace std::experimental::io2d {
 		inline basic_figure_items<GraphicsSurfaces>::revert_matrix::~revert_matrix() noexcept {
 			GraphicsSurfaces::paths::destroy(_Data);
 		}
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::revert_matrix::operator==(const revert_matrix& rhs) const noexcept {
             return true;
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::revert_matrix::operator!=(const revert_matrix& rhs) const noexcept {
             return !(*this == rhs);
@@ -418,7 +418,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::abs_line& basic_figure_items<GraphicsSurfaces>::abs_line::operator=(abs_line&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_abs_line(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_abs_line(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -439,11 +439,11 @@ namespace std::experimental::io2d {
         inline bool basic_figure_items<GraphicsSurfaces>::abs_line::operator==(const abs_line& rhs) const noexcept {
             return to() == rhs.to();
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::abs_line::operator!=(const abs_line& rhs) const noexcept {
             return !(*this == rhs);
-        }        
+        }
 
 		template<class GraphicsSurfaces>
 		inline const typename basic_figure_items<GraphicsSurfaces>::rel_line::data_type& std::experimental::io2d::v1::basic_figure_items<GraphicsSurfaces>::rel_line::data() const noexcept {
@@ -479,7 +479,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::rel_line& basic_figure_items<GraphicsSurfaces>::rel_line::operator=(rel_line&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_rel_line(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_rel_line(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -500,12 +500,12 @@ namespace std::experimental::io2d {
         inline bool basic_figure_items<GraphicsSurfaces>::rel_line::operator==(const rel_line& rhs) const noexcept {
             return to() == rhs.to();
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::rel_line::operator!=(const rel_line& rhs) const noexcept {
             return !(*this == rhs);
         }
-        
+
 		template<class GraphicsSurfaces>
 		inline const typename basic_figure_items<GraphicsSurfaces>::abs_quadratic_curve::data_type& basic_figure_items<GraphicsSurfaces>::abs_quadratic_curve::data() const noexcept {
 			return _Data;
@@ -540,7 +540,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::abs_quadratic_curve& basic_figure_items<GraphicsSurfaces>::abs_quadratic_curve::operator=(abs_quadratic_curve&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_abs_quadratic_curve(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_abs_quadratic_curve(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -569,12 +569,12 @@ namespace std::experimental::io2d {
         inline bool basic_figure_items<GraphicsSurfaces>::abs_quadratic_curve::operator==(const abs_quadratic_curve& rhs) const noexcept {
             return control_pt() == rhs.control_pt() && end_pt() == rhs.end_pt();
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::abs_quadratic_curve::operator!=(const abs_quadratic_curve& rhs) const noexcept {
             return !(*this == rhs);
-        }        
-        
+        }
+
 		template<class GraphicsSurfaces>
 		inline const typename basic_figure_items<GraphicsSurfaces>::rel_quadratic_curve::data_type& basic_figure_items<GraphicsSurfaces>::rel_quadratic_curve::data() const noexcept {
 			return _Data;
@@ -609,7 +609,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::rel_quadratic_curve& basic_figure_items<GraphicsSurfaces>::rel_quadratic_curve::operator=(rel_quadratic_curve&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_rel_quadratic_curve(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_rel_quadratic_curve(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -638,12 +638,12 @@ namespace std::experimental::io2d {
         inline bool basic_figure_items<GraphicsSurfaces>::rel_quadratic_curve::operator==(const rel_quadratic_curve& rhs) const noexcept {
             return control_pt() == rhs.control_pt() && end_pt() == rhs.end_pt();
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::rel_quadratic_curve::operator!=(const rel_quadratic_curve& rhs) const noexcept {
             return !(*this == rhs);
-        }             
-        
+        }
+
 		template<class GraphicsSurfaces>
 		inline const typename basic_figure_items<GraphicsSurfaces>::abs_cubic_curve::data_type& basic_figure_items<GraphicsSurfaces>::abs_cubic_curve::data() const noexcept {
 			return _Data;
@@ -678,7 +678,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::abs_cubic_curve& basic_figure_items<GraphicsSurfaces>::abs_cubic_curve::operator=(abs_cubic_curve&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_abs_cubic_curve(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_abs_cubic_curve(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -715,7 +715,7 @@ namespace std::experimental::io2d {
         inline bool basic_figure_items<GraphicsSurfaces>::abs_cubic_curve::operator==(const abs_cubic_curve& rhs) const noexcept {
             return control_pt1() == rhs.control_pt1() && control_pt2() == rhs.control_pt2() && end_pt() == rhs.end_pt();
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::abs_cubic_curve::operator!=(const abs_cubic_curve& rhs) const noexcept {
             return !(*this == rhs);
@@ -755,7 +755,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::rel_cubic_curve& basic_figure_items<GraphicsSurfaces>::rel_cubic_curve::operator=(rel_cubic_curve&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_rel_cubic_curve(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_rel_cubic_curve(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -792,12 +792,12 @@ namespace std::experimental::io2d {
         inline bool basic_figure_items<GraphicsSurfaces>::rel_cubic_curve::operator==(const rel_cubic_curve& rhs) const noexcept {
             return control_pt1() == rhs.control_pt1() && control_pt2() == rhs.control_pt2() && end_pt() == rhs.end_pt();
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::rel_cubic_curve::operator!=(const rel_cubic_curve& rhs) const noexcept {
             return !(*this == rhs);
-        }        
-        
+        }
+
 		template<class GraphicsSurfaces>
 		inline const typename basic_figure_items<GraphicsSurfaces>::arc::data_type& std::experimental::io2d::v1::basic_figure_items<GraphicsSurfaces>::arc::data() const noexcept {
 			return _Data;
@@ -832,7 +832,7 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::arc& basic_figure_items<GraphicsSurfaces>::arc::operator=(arc&& other) noexcept {
 			if (this != &other) {
-				_Data = move(GraphicsSurfaces::paths::move_arc(move(other._Data)));
+				_Data = std::move(GraphicsSurfaces::paths::move_arc(std::move(other._Data)));
 			}
 			return *this;
 		}
@@ -877,7 +877,7 @@ namespace std::experimental::io2d {
         inline bool basic_figure_items<GraphicsSurfaces>::arc::operator==(const arc& rhs) const noexcept {
             return radius() == rhs.radius() && rotation() == rhs.rotation() && start_angle() == rhs.start_angle();
         }
-        
+
         template<class GraphicsSurfaces>
         inline bool basic_figure_items<GraphicsSurfaces>::arc::operator!=(const arc& rhs) const noexcept {
             return !(*this == rhs);
