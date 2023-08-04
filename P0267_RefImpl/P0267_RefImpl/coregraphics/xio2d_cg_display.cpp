@@ -5,7 +5,7 @@ namespace std::experimental::io2d { inline namespace v1 { namespace _CoreGraphic
 
 CGRect _ScaledBackBufferRect(CGSize back_buffer_size, CGSize display_buffer_size, scaling sc)
 {
-    //TODO: #154 Fix Error asserting in MacOS CoreGraphics
+    //TODO: #1 Error asserting in MacOS CoreGraphics
     assert(back_buffer_size.width >= 1. && back_buffer_size.height >= 1. &&
            display_buffer_size.width >= 1. && display_buffer_size.height >= 1. );
 
