@@ -128,7 +128,7 @@ namespace std {
 
 				template<class GraphicsSurfaces>
 				inline basic_brush_props<GraphicsSurfaces>::basic_brush_props(basic_brush_props&& other) noexcept
-					: _Data(GraphicsSurfaces::surface_state_props::move_brush_props(move(other._Data))) {
+            : _Data(GraphicsSurfaces::surface_state_props::move_brush_props(std::move(other._Data))) {
 				}
 
 				template<class GraphicsSurfaces>
@@ -228,13 +228,13 @@ namespace std {
 
 				template<class GraphicsSurfaces>
 				inline basic_clip_props<GraphicsSurfaces>::basic_clip_props(basic_clip_props&& other) noexcept
-					: _Data(GraphicsSurfaces::surface_state_props::move_clip_props(move(other._Data))) {
+            : _Data(GraphicsSurfaces::surface_state_props::move_clip_props(std::move(other._Data))) {
 				}
 
 				template<class GraphicsSurfaces>
 				inline basic_clip_props<GraphicsSurfaces>& basic_clip_props<GraphicsSurfaces>::operator=(basic_clip_props&& other) noexcept {
 					if (this != &other) {
-						_Data = move(GraphicsSurfaces::surface_state_props::move_clip_props(move(other._Data)));
+                        _Data = std::move(GraphicsSurfaces::surface_state_props::move_clip_props(std::move(other._Data)));
 					}
 					return *this;
 				}

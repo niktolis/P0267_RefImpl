@@ -79,7 +79,7 @@ _GS::surfaces::create_image_surface(const string &p, image_file_format iff, io2d
 
 inline _GS::surfaces::image_surface_data_type
 _GS::surfaces::move_image_surface(image_surface_data_type&& data) noexcept {
-    return move(data);
+    return std::move(data);
 }
     
 inline void

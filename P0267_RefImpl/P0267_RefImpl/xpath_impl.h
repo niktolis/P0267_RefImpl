@@ -40,7 +40,7 @@ namespace std::experimental::io2d {
 
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::abs_new_figure::abs_new_figure(abs_new_figure&& other) noexcept
-			: _Data(GraphicsSurfaces::paths::move_abs_new_figure(move(other._Data))) {
+    : _Data(GraphicsSurfaces::paths::move_abs_new_figure(std::move(other._Data))) {
 		}
 
 		template<class GraphicsSurfaces>
@@ -105,7 +105,7 @@ namespace std::experimental::io2d {
 		}
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::rel_new_figure::rel_new_figure(rel_new_figure&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_rel_new_figure(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_rel_new_figure(std::move(other._Data)))) {
 		}
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::rel_new_figure& basic_figure_items<GraphicsSurfaces>::rel_new_figure::operator=(rel_new_figure&& other) noexcept {
@@ -167,7 +167,7 @@ namespace std::experimental::io2d {
 
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::close_figure::close_figure(close_figure&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_close_figure(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_close_figure(std::move(other._Data)))) {
 		}
 
 		template<class GraphicsSurfaces>
@@ -228,7 +228,7 @@ namespace std::experimental::io2d {
 
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::abs_matrix::abs_matrix(abs_matrix&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_abs_matrix(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_abs_matrix(std::move(other._Data)))) {
 		}
 
 		template<class GraphicsSurfaces>
@@ -299,7 +299,7 @@ namespace std::experimental::io2d {
 
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::rel_matrix::rel_matrix(rel_matrix&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_rel_matrix(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_rel_matrix(std::move(other._Data)))) {
 		}
 
 		template<class GraphicsSurfaces>
@@ -360,7 +360,7 @@ namespace std::experimental::io2d {
 		}
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::revert_matrix::revert_matrix(revert_matrix&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_revert_matrix(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_revert_matrix(std::move(other._Data)))) {
 		}
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::revert_matrix& basic_figure_items<GraphicsSurfaces>::revert_matrix::operator=(revert_matrix&& other) noexcept {
@@ -413,7 +413,7 @@ namespace std::experimental::io2d {
 		}
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::abs_line::abs_line(abs_line&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_abs_line(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_abs_line(std::move(other._Data)))) {
 		}
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::abs_line& basic_figure_items<GraphicsSurfaces>::abs_line::operator=(abs_line&& other) noexcept {
@@ -474,7 +474,7 @@ namespace std::experimental::io2d {
 		}
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::rel_line::rel_line(rel_line&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_rel_line(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_rel_line(std::move(other._Data)))) {
 		}
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::rel_line& basic_figure_items<GraphicsSurfaces>::rel_line::operator=(rel_line&& other) noexcept {
@@ -535,7 +535,7 @@ namespace std::experimental::io2d {
 		}
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::abs_quadratic_curve::abs_quadratic_curve(abs_quadratic_curve&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_abs_quadratic_curve(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_abs_quadratic_curve(std::move(other._Data)))) {
 		}
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::abs_quadratic_curve& basic_figure_items<GraphicsSurfaces>::abs_quadratic_curve::operator=(abs_quadratic_curve&& other) noexcept {
@@ -604,7 +604,7 @@ namespace std::experimental::io2d {
 		}
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::rel_quadratic_curve::rel_quadratic_curve(rel_quadratic_curve&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_rel_quadratic_curve(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_rel_quadratic_curve(std::move(other._Data)))) {
 		}
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::rel_quadratic_curve& basic_figure_items<GraphicsSurfaces>::rel_quadratic_curve::operator=(rel_quadratic_curve&& other) noexcept {
@@ -673,7 +673,7 @@ namespace std::experimental::io2d {
 		}
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::abs_cubic_curve::abs_cubic_curve(abs_cubic_curve&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_abs_cubic_curve(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_abs_cubic_curve(std::move(other._Data)))) {
 		}
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::abs_cubic_curve& basic_figure_items<GraphicsSurfaces>::abs_cubic_curve::operator=(abs_cubic_curve&& other) noexcept {
@@ -750,7 +750,7 @@ namespace std::experimental::io2d {
 		}
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::rel_cubic_curve::rel_cubic_curve(rel_cubic_curve&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_rel_cubic_curve(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_rel_cubic_curve(std::move(other._Data)))) {
 		}
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::rel_cubic_curve& basic_figure_items<GraphicsSurfaces>::rel_cubic_curve::operator=(rel_cubic_curve&& other) noexcept {
@@ -827,7 +827,7 @@ namespace std::experimental::io2d {
 		}
 		template<class GraphicsSurfaces>
 		inline basic_figure_items<GraphicsSurfaces>::arc::arc(arc&& other) noexcept
-			: _Data(move(GraphicsSurfaces::paths::move_arc(move(other._Data)))) {
+    : _Data(std::move(GraphicsSurfaces::paths::move_arc(std::move(other._Data)))) {
 		}
 		template<class GraphicsSurfaces>
 		inline typename basic_figure_items<GraphicsSurfaces>::arc& basic_figure_items<GraphicsSurfaces>::arc::operator=(arc&& other) noexcept {
@@ -933,14 +933,14 @@ namespace std::experimental::io2d {
 		template<class GraphicsSurfaces>
 		inline basic_interpreted_path<GraphicsSurfaces>::basic_interpreted_path(basic_interpreted_path&& val) noexcept {
 			if (this != &val) {
-				_Data = move(GraphicsSurfaces::paths::move_interpreted_path(move(val._Data)));
+                _Data = std::move(GraphicsSurfaces::paths::move_interpreted_path(std::move(val._Data)));
 			}
 		}
 
 		template<class GraphicsSurfaces>
 		inline basic_interpreted_path<GraphicsSurfaces>& basic_interpreted_path<GraphicsSurfaces>::operator=(basic_interpreted_path&& val) noexcept {
 			if (this != &val) {
-				_Data = move(GraphicsSurfaces::paths::move_interpreted_path(move(val._Data)));
+                _Data = std::move(GraphicsSurfaces::paths::move_interpreted_path(std::move(val._Data)));
 			}
 			return *this;
 		}

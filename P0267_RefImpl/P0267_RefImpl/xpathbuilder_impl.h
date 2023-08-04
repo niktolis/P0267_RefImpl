@@ -138,7 +138,7 @@ namespace std::experimental::io2d {
 
 		template <class GraphicsSurfaces, class Allocator>
 		inline basic_path_builder<GraphicsSurfaces, Allocator>::basic_path_builder(basic_path_builder&& pf) noexcept
-			: _Data(move(pf._Data)) {
+    : _Data(std::move(pf._Data)) {
 		}
 
 		template <class GraphicsSurfaces, class Allocator>

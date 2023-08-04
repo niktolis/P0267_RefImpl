@@ -38,7 +38,7 @@ namespace std {
 #endif
 				template<class GraphicsSurfaces>
 				inline basic_image_surface<GraphicsSurfaces>::basic_image_surface(basic_image_surface&& val) noexcept 
-					: _Data(move(GraphicsSurfaces::surfaces::move_image_surface(move(val._Data)))) {
+            : _Data(std::move(GraphicsSurfaces::surfaces::move_image_surface(std::move(val._Data)))) {
 				}
 
 				template<class GraphicsSurfaces>

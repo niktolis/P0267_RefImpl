@@ -171,9 +171,9 @@ static _GS::brushes::_Surface::_Pad BuildPad(CGImageRef image, CGContextRef orig
     }
     
     pad.top_left.reset( _CreateColorFromBitmapLocation(orig_ctx, 0, 0) );
-    pad.top_right.reset( _CreateColorFromBitmapLocation(orig_ctx, image_width-1, 0) );
-    pad.bottom_left.reset( _CreateColorFromBitmapLocation(orig_ctx, 0, image_height-1) );
-    pad.bottom_right.reset( _CreateColorFromBitmapLocation(orig_ctx, image_width-1, image_height-1) );
+    pad.top_right.reset( _CreateColorFromBitmapLocation(orig_ctx, int(image_width-1), 0) );
+    pad.bottom_left.reset( _CreateColorFromBitmapLocation(orig_ctx, 0, int(image_height-1)) );
+    pad.bottom_right.reset( _CreateColorFromBitmapLocation(orig_ctx, int(image_width-1), int(image_height-1)) );
     
     return pad;
 }

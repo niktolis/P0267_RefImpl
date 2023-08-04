@@ -66,7 +66,7 @@ TEST_CASE("XRGB32 image_surface handles colors with transparency as premultiplie
     SECTION("Painting via brush surface") {
         auto brush_img = image_surface{format::argb32, 1, 1};
         brush_img.paint(brush{color}, nullopt, rp);    
-        img.paint(brush{move(brush_img)}, nullopt, rp);
+        img.paint(brush{std::move(brush_img)}, nullopt, rp);
     }
     
     CHECK( CompareImageColor(img, 0, 0, ConvertToAlphaless(color), 0.03f) == true );
@@ -77,7 +77,7 @@ TEST_CASE("XRGB32 image_surfaces are handled as their alpha values are 1.0f")
     auto img_brush = image_surface{format::xrgb32, 1, 1};
     auto color = rgba_color{75, 150, 225};
     img_brush.paint(brush{color});
-    auto b = brush{move(img_brush)};
+    auto b = brush{std::move(img_brush)};
     
     auto img = image_surface{format::argb32, 1, 1};
     img.paint(b);    
@@ -132,7 +132,7 @@ TEST_CASE("A8 image_surfaces use only alpha channel of colors")
         ITERATE_OVER_COLORS;
         auto brush_img = image_surface{format::argb32, 1, 1};
         brush_img.paint(brush{color});    
-        img.paint(brush{move(brush_img)});
+        img.paint(brush{std::move(brush_img)});
     }    
     
     CHECK( CompareImageColor(img, 0, 0, ConvertToAlphaonly(color), 0.03f) == true );    
@@ -147,7 +147,7 @@ TEST_CASE("A8 image_surfaces are handled as their color values are 0.0f")
     brush_img.paint(brush{color});
     
     auto img = image_surface{format::argb32, 1, 1};
-    img.paint(brush{move(brush_img)});
+    img.paint(brush{std::move(brush_img)});
 
     CHECK( CompareImageColor(img, 0, 0, ConvertToAlphaonly(color), 0.03f) == true );    
 }

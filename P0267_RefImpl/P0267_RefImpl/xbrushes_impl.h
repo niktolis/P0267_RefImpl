@@ -62,7 +62,7 @@ namespace std::experimental::io2d {
 		}
 		template<class GraphicsSurfaces>
 		inline basic_brush<GraphicsSurfaces>::basic_brush(basic_image_surface<GraphicsSurfaces>&& img)
-			: _Data(GraphicsSurfaces::brushes::create_brush(move(img))) {
+    : _Data(GraphicsSurfaces::brushes::create_brush(std::move(img))) {
 		}
 		template<class GraphicsSurfaces>
 		inline brush_type basic_brush<GraphicsSurfaces>::type() const noexcept {

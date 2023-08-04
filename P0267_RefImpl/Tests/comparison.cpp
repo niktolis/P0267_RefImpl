@@ -149,7 +149,7 @@ static optional<_Interchange_buffer> LoadPNGIntoR8G8B8A8(const vector<uint8_t> &
         }        
     }
     
-    return move(buffer);
+    return std::move(buffer);
 }
 
 static optional<_Interchange_buffer> ReadFile(const std::string &path)
@@ -174,7 +174,7 @@ static optional<_Interchange_buffer> ToInterchangeBufferImpl(basic_image_surface
     auto buffer = GS::surfaces::_Copy_to_interchange_buffer(image.data(),
                                                             _Interchange_buffer::pixel_layout::r8g8b8a8,
                                                             _Interchange_buffer::alpha_mode::straight); 
-    return move(buffer);
+    return std::move(buffer);
 }
 
 template <class GS>
