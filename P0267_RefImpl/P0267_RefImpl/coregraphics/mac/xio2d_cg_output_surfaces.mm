@@ -2,6 +2,7 @@
 #include "../xio2d_cg_fps_counter.h"
 #include "../xio2d_cg_display.h"
 #include <Cocoa/Cocoa.h>
+#include <QuartzCore/QuartzCore.h>
 #include <iostream>
 
 static const auto g_WindowTitle = @"IO2D/CoreGraphics managed output surface"; 
@@ -70,7 +71,8 @@ _GS::surfaces::output_surface_data_type _GS::surfaces::create_output_surface(int
     ctx->window = [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, preferredWidth, preferredHeight)
                                               styleMask:style
                                                 backing:NSBackingStoreBuffered
-                                                  defer:false];
+                                                  defer:false
+                                                    screen:nil];
     ctx->window.title = g_WindowTitle;
     ctx->output_view = [[_IO2DOutputView alloc] initWithFrame:ctx->window.contentView.bounds];
     ctx->output_view.data = ctx.get();
@@ -386,6 +388,12 @@ using namespace std::experimental::io2d::_CoreGraphics;
         _data->size_change_callback(*_data->frontend);    
 }
 
+-(void)viewWillDraw
+{
+    CALayer * layer = self.layer;
+    layer.contentsFormat = kCAContentsFormatRGBA8Uint;
+}
+
 - (void)drawRect:(NSRect)dirtyRect
 {
     if( _data->auto_clear )
@@ -396,7 +404,12 @@ using namespace std::experimental::io2d::_CoreGraphics;
         
     _data->draw_callback(*_data->frontend);
     
-    ShowBackBuffer(*_data, NSGraphicsContext.currentContext.CGContext);
+    CGContextRef myContext = [[NSGraphicsContext currentContext] CGContext];
+    
+    
+    
+    
+    ShowBackBuffer(*_data, myContext);
     
     if( _data->show_fps ) {
         _data->fps_counter.CommitFrame();

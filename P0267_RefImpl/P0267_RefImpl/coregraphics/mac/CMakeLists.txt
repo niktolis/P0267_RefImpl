@@ -21,6 +21,7 @@ target_link_libraries(io2d_coregraphics_mac PUBLIC io2d_coregraphics)
 target_link_libraries(io2d_coregraphics_mac PUBLIC "-framework Cocoa")
 target_link_libraries(io2d_coregraphics_mac PUBLIC "-framework AppKit")
 target_link_libraries(io2d_coregraphics_mac PUBLIC "-framework CoreServices")
+target_link_libraries(io2d_coregraphics_mac PUBLIC "-framework QuartzCore")
 
 install(
 	TARGETS io2d_coregraphics_mac EXPORT io2d_targets
