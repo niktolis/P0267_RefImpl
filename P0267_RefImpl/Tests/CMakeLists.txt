@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5.0)
 project(io2d CXX)
 set(CMAKE_CXX_STANDARD 17)
 
-set(CATCH_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Catch2/single_include)
+set(CATCH_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Catch2/single_include/catch2)
 add_library(Catch INTERFACE)
 target_include_directories(Catch INTERFACE ${CATCH_INCLUDE_DIR})
 #find_package(catch2 REQUIRED)
@@ -39,12 +39,12 @@ elseif(APPLE)
 	find_path(PNG_INCLUDE_DIR libpng16/png.h)
 	target_include_directories(tests PUBLIC ${PNG_INCLUDE_DIR})
 	find_library(PNG_LIB png16)
-	target_link_libraries(tests ${PNG_LIB})	
+	target_link_libraries(tests ${PNG_LIB})
 else() # LINUX
 	find_path(PNG_INCLUDE_DIR libpng/png.h)
 	target_include_directories(tests PUBLIC ${PNG_INCLUDE_DIR})
 	find_library(PNG_LIB png)
-	target_link_libraries(tests ${PNG_LIB})	
+	target_link_libraries(tests ${PNG_LIB})
 
 endif()
 
