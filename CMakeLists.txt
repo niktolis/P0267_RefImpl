@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0.0)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/share" CACHE PATH "Installation directory")
+
 
 project(io2d CXX)
 if( MSVC )
